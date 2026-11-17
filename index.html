@@ -1,130 +1,331 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dwaraga Prasath | ECE Portfolio</title>
+<meta name="theme-color" content="#101d36">
+<meta name="description" content="Dwaraga Prasath P — Electronics and Communication Engineering student, robotics developer and engineering researcher.">
+<title>Dwaraga Prasath P | Engineering & Research Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-* {box-sizing:border-box; scroll-behavior:smooth}
-body {
-  margin:0; font-family:Arial,sans-serif;
-  background:#f7f8fa; color:#26364d;
-  line-height:1.7;
-}
-header {
-  padding:22px 8%; display:flex;
-  justify-content:space-between; align-items:center;
-  background:white; border-bottom:1px solid #e5e8ed;
-}
-header strong {font-size:20px}
-nav a {margin-left:20px;color:#40536e;text-decoration:none}
-main {max-width:1000px;margin:auto;padding:65px 24px}
-.hero {padding:65px 0}
-.tag {color:#74859e;letter-spacing:3px;font-size:13px}
-h1 {font-size:48px;line-height:1.2;margin:15px 0}
-h2 {margin-top:55px}
-p {color:#64748b}
-.btn {
- display:inline-block;padding:12px 20px;
- background:#26364d;color:white;
- text-decoration:none;border-radius:7px;margin:8px 8px 0 0;
-}
-.card {
- background:white;padding:23px;margin:16px 0;
- border:1px solid #e5e8ed;border-radius:12px;
-}
-.skills span {
- display:inline-block;background:#e9edf2;
- padding:8px 13px;margin:5px;border-radius:5px;
- font-size:14px;
-}
-footer {text-align:center;padding:30px;color:#74859e}
+:root{--navy:#101d36;--navy2:#17294b;--ink:#17233a;--muted:#66748b;--line:#e4e9f0;--paper:#f6f8fb;--white:#fff;--silver:#c7d0dc;--gold:#b99b65;--shadow:0 18px 55px rgba(16,29,54,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:88px}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"DM Sans",sans-serif;line-height:1.7}
+a{color:inherit}button{font:inherit}
+.nav{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(16px);border-bottom:1px solid rgba(228,233,240,.9)}
+.nav-inner{max-width:1160px;margin:auto;padding:14px 26px;display:flex;align-items:center;justify-content:space-between;gap:22px}
+.brand{font:800 20px Manrope,sans-serif;letter-spacing:-1px;color:var(--navy);text-decoration:none}.brand span{color:var(--gold)}
+.nav-links{display:flex;gap:24px;align-items:center}.nav-links a{text-decoration:none;color:#56647a;font-size:13px;font-weight:700;transition:.2s}.nav-links a:hover{color:var(--gold)}
+.menu{display:none;border:1px solid var(--line);background:white;border-radius:10px;padding:8px 11px;color:var(--navy)}
+.wrap{max-width:1160px;margin:auto;padding:0 26px}
+.hero{position:relative;overflow:hidden;background:linear-gradient(125deg,#0d1930 0%,#142747 60%,#20395c 100%);color:white;padding:104px 0 88px}
+.hero:before,.hero:after{content:"";position:absolute;border:1px solid rgba(255,255,255,.09);border-radius:50%;pointer-events:none}
+.hero:before{width:560px;height:560px;right:-140px;top:-270px}.hero:after{width:420px;height:420px;right:-70px;top:-200px}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.5fr .7fr;gap:50px;align-items:center}
+.eyebrow{display:flex;align-items:center;gap:12px;color:#c5d0df;font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase}
+.eyebrow:before{content:"";width:30px;height:1px;background:var(--gold)}
+h1,h2,h3,h4{font-family:Manrope,sans-serif;line-height:1.2}
+h1{font-size:clamp(42px,6vw,70px);letter-spacing:-3px;margin:20px 0 14px;max-width:760px}
+.hero h1 span{color:#d7c29b}
+.role{font:600 clamp(16px,2vw,21px) Manrope,sans-serif;color:#e0e6ef;margin:0 0 18px}
+.intro{max-width:690px;color:#bdc9d9;font-size:16px;margin:0 0 28px}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.btn{display:inline-flex;align-items:center;gap:9px;padding:12px 18px;border-radius:8px;text-decoration:none;font-weight:700;font-size:13px;transition:transform .2s,box-shadow .2s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 10px 24px rgba(0,0,0,.16)}
+.btn-primary{background:#fff;color:var(--navy)}.btn-outline{border:1px solid rgba(255,255,255,.32);color:#fff}
+.hero-note{border:1px solid rgba(255,255,255,.16);background:rgba(255,255,255,.06);padding:26px;border-radius:16px;backdrop-filter:blur(8px)}
+.note-label{color:#c8b38a;font-size:10px;letter-spacing:2px;font-weight:800;text-transform:uppercase}
+.hero-note h3{font-size:20px;margin:10px 0;color:#fff}.hero-note p{font-size:13px;color:#c3cede;margin:0}
+.hero-note .rule{height:1px;background:rgba(255,255,255,.14);margin:18px 0}
+.hero-note strong{color:white}
+.section{padding:82px 0}.section.white{background:#fff}
+.section-head{display:flex;align-items:end;justify-content:space-between;gap:24px;margin-bottom:30px}
+.kicker{color:#9a8054;font-size:10px;letter-spacing:2.5px;font-weight:800;text-transform:uppercase}
+h2{font-size:clamp(28px,3.5vw,39px);letter-spacing:-1.4px;margin:7px 0 0;color:var(--navy)}
+.section-sub{max-width:550px;color:var(--muted);font-size:14px;margin:0}
+.about-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:22px}
+.panel{background:#fff;border:1px solid var(--line);border-radius:15px;padding:28px;box-shadow:0 5px 22px rgba(16,29,54,.025)}
+.panel p{color:var(--muted);margin:0}
+.fact-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.fact{background:#f7f9fc;border:1px solid var(--line);border-radius:11px;padding:15px}
+.fact small{display:block;color:#8a96a8;font-size:10px;text-transform:uppercase;letter-spacing:1px;font-weight:800}
+.fact strong{display:block;color:var(--navy);font-size:13px;margin-top:5px}
+.interest-row{display:flex;flex-wrap:wrap;gap:9px;margin-top:20px}
+.pill{background:#f0f3f7;color:#42516a;border:1px solid #e4e9f0;padding:7px 11px;border-radius:999px;font-size:11px;font-weight:700}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.project{background:white;border:1px solid var(--line);border-radius:15px;padding:25px;position:relative;overflow:hidden;transition:transform .25s,box-shadow .25s}
+.project:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+.project-top{display:flex;justify-content:space-between;gap:15px;align-items:start}
+.project-no{font:800 12px Manrope,sans-serif;color:#b8a17a;letter-spacing:1px}
+.project h3{font-size:19px;color:var(--navy);margin:9px 0}
+.project p{color:var(--muted);font-size:13px;margin:0 0 16px}
+.project .meta{display:flex;flex-wrap:wrap;gap:7px}
+.tag{font-size:10px;font-weight:700;color:#52627a;background:#f2f5f8;padding:5px 8px;border-radius:5px}
+.project .status{font-size:10px;color:#887044;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.project-link{display:inline-block;margin-top:15px;font-size:12px;font-weight:800;color:#8c744e;text-decoration:none}
+.featured{grid-column:span 2;background:linear-gradient(120deg,#142747,#1b3559);color:white}
+.featured h3{color:white;font-size:22px}.featured p{color:#c7d2e1;max-width:800px}.featured .tag{background:rgba(255,255,255,.12);color:#e4eaf2}
+.featured .status{color:#ddc99f}
+.publication{display:grid;grid-template-columns:1fr 260px;gap:28px;align-items:center}
+.pub-card{background:white;border:1px solid var(--line);border-radius:16px;padding:28px}
+.pub-type{font-size:10px;letter-spacing:2px;color:#9a8054;font-weight:800;text-transform:uppercase}
+.pub-card h3{font-size:22px;color:var(--navy);margin:12px 0}
+.pub-card p{color:var(--muted);font-size:13px}
+.pub-meta{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:18px 0}
+.pub-meta div{background:#f6f8fb;border-radius:8px;padding:10px}
+.pub-meta small{display:block;color:#8793a4;font-size:9px;font-weight:800;text-transform:uppercase;letter-spacing:1px}
+.pub-meta strong{font-size:12px;color:var(--navy);overflow-wrap:anywhere}
+.cert-img{width:100%;height:220px;object-fit:cover;object-position:center;border-radius:10px;border:1px solid var(--line);cursor:zoom-in;transition:transform .25s}
+.cert-img:hover{transform:scale(1.02)}
+.conference{display:grid;grid-template-columns:300px 1fr;gap:28px;align-items:center;margin-top:18px}
+.conference .cert-img{height:205px}
+.conference h3{font-size:20px;margin:8px 0;color:var(--navy)}
+.conference p{color:var(--muted);font-size:13px;margin:0}
+.timeline{position:relative;margin-left:7px;padding-left:25px;border-left:1px solid #d9e0e9}
+.timeline-item{position:relative;padding:0 0 27px}
+.timeline-item:before{content:"";position:absolute;left:-31px;top:6px;width:11px;height:11px;border-radius:50%;background:var(--gold);border:3px solid white;box-shadow:0 0 0 1px #d9e0e9}
+.timeline-item h3{font-size:16px;margin:0 0 5px;color:var(--navy)}
+.timeline-item p{font-size:12px;color:var(--muted);margin:0}
+.timeline-item small{color:#9a8054;font-size:10px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+.skill-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.skill{background:white;border:1px solid var(--line);border-radius:12px;padding:19px}
+.skill h3{font-size:14px;color:var(--navy);margin:0 0 9px}
+.skill p{font-size:12px;color:var(--muted);margin:0}
+.achievement-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}
+.achievement{padding:22px;background:white;border:1px solid var(--line);border-radius:13px}
+.achievement .symbol{font-size:20px;color:var(--gold)}
+.achievement h3{font-size:15px;color:var(--navy);margin:8px 0}
+.achievement p{font-size:12px;color:var(--muted);margin:0}
+.contact{background:var(--navy);color:white;border-radius:18px;padding:38px;display:flex;justify-content:space-between;align-items:center;gap:25px}
+.contact h2{color:white;margin:5px 0 8px}.contact p{color:#c1ccdb;margin:0;font-size:13px}
+.contact-links{display:flex;flex-wrap:wrap;gap:10px}
+.contact-links a{color:white;text-decoration:none;border:1px solid rgba(255,255,255,.25);border-radius:8px;padding:10px 13px;font-size:12px;font-weight:700}
+footer{text-align:center;padding:28px 15px;color:#8b97a8;font-size:11px}
+.modal{display:none;position:fixed;inset:0;background:rgba(7,13,24,.88);z-index:100;align-items:center;justify-content:center;padding:25px}
+.modal.open{display:flex}.modal img{max-width:min(100%,1100px);max-height:90vh;object-fit:contain;border-radius:8px}
+.modal button{position:absolute;top:18px;right:25px;border:0;background:white;border-radius:50%;width:42px;height:42px;font-size:24px;cursor:pointer}
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+@media(max-width:800px){.hero-grid,.about-grid,.publication,.conference{grid-template-columns:1fr}.hero-note{max-width:500px}.skill-grid{grid-template-columns:repeat(2,1fr)}.achievement-grid{grid-template-columns:1fr 1fr}.conference .cert-img{height:auto;max-height:260px}}
+@media(max-width:620px){.nav-inner{padding:12px 18px}.menu{display:block}.nav-links{display:none;position:absolute;top:60px;left:0;right:0;background:white;padding:16px 22px;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:14px}.nav-links.open{display:flex}.wrap{padding:0 18px}.hero{padding:75px 0 65px}.hero-grid{gap:28px}h1{letter-spacing:-2px}.section{padding:62px 0}.section-head{display:block}.section-sub{margin-top:12px}.cards{grid-template-columns:1fr}.featured{grid-column:auto}.skill-grid,.achievement-grid{grid-template-columns:1fr 1fr}.pub-meta{grid-template-columns:1fr}.contact{display:block;padding:27px}.contact-links{margin-top:20px}.panel{padding:22px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*,*:before,*:after{animation:none!important;transition:none!important}}
 </style>
 </head>
 <body>
-<header>
-<strong>DP.</strong>
-<nav>
-<a href="#about">About</a>
-<a href="#projects">Projects</a>
-<a href="#skills">Skills</a>
-<a href="#contact">Contact</a>
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#home">DP<span>.</span></a>
+    <button class="menu" id="menuBtn" aria-label="Open navigation">☰</button>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">ABOUT</a><a href="#projects">PROJECTS</a><a href="#research">RESEARCH</a><a href="#skills">SKILLS</a><a href="#journey">JOURNEY</a><a href="#contact">CONTACT</a>
+    </div>
+  </div>
 </nav>
+
+<header class="hero" id="home">
+ <div class="wrap hero-grid">
+  <div>
+   <div class="eyebrow">Electronics · Research · Innovation</div>
+   <h1>Dwaraga <span>Prasath P.</span></h1>
+   <p class="role">Electronics & Communication Engineering Student</p>
+   <p class="intro">I explore the intersection of electronics, intelligent systems and real-world engineering — building with embedded platforms, robotics, signal processing, geospatial technologies and machine learning.</p>
+   <div class="actions">
+    <a class="btn btn-primary" href="#projects">Explore my work ↗</a>
+    <a class="btn btn-outline" href="https://www.linkedin.com/in/dwaraga-prasath-p-ab3055382/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a class="btn btn-outline" href="https://github.com/dwaragaprasathp-creator" target="_blank" rel="noopener">GitHub ↗</a>
+   </div>
+  </div>
+  <aside class="hero-note">
+   <div class="note-label">Current focus</div>
+   <h3>Building systems that connect hardware, software and research.</h3>
+   <p>From autonomous mobile robotics to multimodal condition monitoring and satellite-driven urban climate analysis.</p>
+   <div class="rule"></div>
+   <p><strong>Based in</strong><br>Dindigul, Tamil Nadu, India</p>
+   <div class="rule"></div>
+   <p><strong>Education</strong><br>B.Tech · Electronics & Communication Engineering<br>Amrita Vishwa Vidyapeetham, Nagercoil</p>
+  </aside>
+ </div>
 </header>
 
-<main>
-<section class="hero">
-<div class="tag">ELECTRONICS & COMMUNICATION ENGINEERING</div>
-<h1>Hi, I'm Dwaraga Prasath.</h1>
-<h3>Engineering student | Researcher | Technology Enthusiast</h3>
-<p>
-I am an ECE undergraduate passionate about electronics,
-robotics, embedded systems, artificial intelligence and
-research-driven engineering solutions.
-</p>
-<a class="btn" href="#projects">Explore My Work</a>
-<a class="btn" href="https://github.com/dwaragaprasathp-creator">GitHub</a>
+<section class="section" id="about">
+ <div class="wrap">
+  <div class="section-head"><div><div class="kicker">A little about me</div><h2>Engineering with curiosity and purpose.</h2></div><p class="section-sub">An undergraduate engineer interested in turning technical ideas into practical prototypes, research outcomes and useful systems.</p></div>
+  <div class="about-grid">
+   <div class="panel reveal">
+    <p>I am an Electronics and Communication Engineering undergraduate at Amrita Vishwa Vidyapeetham, Nagercoil. My work spans embedded systems, robotics, artificial intelligence, computer vision, signal processing and geospatial analysis. I enjoy learning across disciplines, experimenting with hardware and software, and communicating engineering through research and technical projects.</p>
+    <div class="interest-row"><span class="pill">Embedded Systems</span><span class="pill">Autonomous Robotics</span><span class="pill">AI & Machine Learning</span><span class="pill">Signal Processing</span><span class="pill">IoT</span><span class="pill">Geospatial AI</span><span class="pill">Computer Vision</span></div>
+   </div>
+   <div class="fact-grid reveal">
+    <div class="fact"><small>Degree</small><strong>B.Tech · ECE</strong></div>
+    <div class="fact"><small>Institution</small><strong>Amrita Vishwa Vidyapeetham</strong></div>
+    <div class="fact"><small>Campus</small><strong>Nagercoil, Tamil Nadu</strong></div>
+    <div class="fact"><small>Academic period</small><strong>2025–2029</strong></div>
+   </div>
+  </div>
+ </div>
 </section>
 
-<section id="about">
-<h2>About Me</h2>
-<div class="card">
-I am pursuing B.Tech in Electronics and Communication
-Engineering at Amrita University, Nagercoil.
-I enjoy developing practical engineering systems,
-exploring emerging technologies and working on
-interdisciplinary research.
-</div>
+<section class="section white" id="projects">
+ <div class="wrap">
+  <div class="section-head"><div><div class="kicker">Selected engineering work</div><h2>Projects & systems.</h2></div><p class="section-sub">A selection of ongoing and completed work across robotics, embedded engineering, intelligent monitoring and geospatial applications.</p></div>
+  <div class="cards">
+   <article class="project featured reveal">
+    <div class="project-top"><span class="project-no">01 / FEATURED PROJECT</span><span class="status">In development</span></div>
+    <h3>AURA One — Autonomous Mobile Robot</h3>
+    <p>A differential-drive mobile robotics platform combining ESP32-based hardware with a ROS 2 Jazzy and Gazebo simulation workflow. The development roadmap includes sensor integration, wheel-odometry feedback, IMU-based orientation, obstacle detection, mapping and navigation. A planned extension explores autonomous sapling monitoring along a defined route, with environmental and soil sensing.</p>
+    <div class="meta"><span class="tag">ROS 2 Jazzy</span><span class="tag">Gazebo Harmonic</span><span class="tag">ESP32</span><span class="tag">Embedded C++</span><span class="tag">Sensors</span><span class="tag">Nav2 / SLAM</span></div>
+   </article>
+   <article class="project reveal">
+    <div class="project-top"><span class="project-no">02</span><span class="status">Research & development</span></div>
+    <h3>Multimodal Motor Health Monitoring</h3>
+    <p>A condition-monitoring workflow investigating motor faults through vibration and acoustic signals. Work includes signal conditioning, filtering, windowing, FFT-based analysis, feature extraction and machine-learning classification, with a multimodal score combining complementary signal information.</p>
+    <div class="meta"><span class="tag">Python</span><span class="tag">DSP</span><span class="tag">FFT</span><span class="tag">Machine Learning</span><span class="tag">Sensor Analytics</span></div>
+   </article>
+   <article class="project reveal">
+    <div class="project-top"><span class="project-no">03</span><span class="status">Research</span></div>
+    <h3>Urban Heat Analysis — Hyderabad</h3>
+    <p>A geospatial research study using Landsat 8/9 imagery, thermal bands, spectral indices, SRTM terrain data and ERA5 climate variables to investigate urban heat patterns across multiple years. The workflow explores machine-learning models, spatial validation, temporal testing and explainable analysis.</p>
+    <div class="meta"><span class="tag">Remote Sensing</span><span class="tag">GIS</span><span class="tag">Landsat</span><span class="tag">Python</span><span class="tag">XAI</span></div>
+   </article>
+   <article class="project reveal">
+    <div class="project-top"><span class="project-no">04</span><span class="status">Platform concept</span></div>
+    <h3>NearStock / Fyndly — Local Product Discovery</h3>
+    <p>A local-commerce platform concept designed to help people discover product availability in nearby stores. The proposed system connects local inventory discovery with a digital interface, with a Flutter frontend and an Express/SQL backend explored during development.</p>
+    <div class="meta"><span class="tag">Flutter</span><span class="tag">Express.js</span><span class="tag">SQL</span><span class="tag">Product Discovery</span></div>
+   </article>
+   <article class="project reveal">
+    <div class="project-top"><span class="project-no">05</span><span class="status">Prototype work</span></div>
+    <h3>ESP32 IoT & Automation Systems</h3>
+    <p>Microcontroller-based experiments and prototypes involving sensor acquisition, actuator control, wireless connectivity and automation logic. Practical work includes ESP32 boards, ultrasonic sensing, servo actuation and camera-module integration.</p>
+    <div class="meta"><span class="tag">ESP32</span><span class="tag">Arduino</span><span class="tag">IoT</span><span class="tag">Sensors</span><span class="tag">Actuators</span></div>
+   </article>
+   <article class="project reveal">
+    <div class="project-top"><span class="project-no">06</span><span class="status">Simulation</span></div>
+    <h3>ROS 2 TurtleBot3 Navigation Simulation</h3>
+    <p>Exploration of robot navigation and control in a ROS 2 simulation environment, building familiarity with robot models, simulation workflows, velocity commands, sensor topics and autonomous navigation concepts.</p>
+    <div class="meta"><span class="tag">ROS 2</span><span class="tag">TurtleBot3</span><span class="tag">Gazebo</span><span class="tag">Robot Simulation</span></div>
+   </article>
+   <article class="project reveal">
+    <div class="project-top"><span class="project-no">07</span><span class="status">Concept development</span></div>
+    <h3>AI-Based Urban Heat Detection & Cooling Recommendation</h3>
+    <p>A hackathon project concept using satellite and environmental data to identify urban heat-island patterns and explore data-informed cooling interventions.</p>
+    <div class="meta"><span class="tag">Satellite Data</span><span class="tag">AI</span><span class="tag">Urban Climate</span><span class="tag">ISRO Hackathon</span></div>
+   </article>
+   <article class="project reveal">
+    <div class="project-top"><span class="project-no">08</span><span class="status">Engineering concept</span></div>
+    <h3>Autonomous Drone Delivery for Large-Scale Industries</h3>
+    <p>An engineering concept exploring autonomous aerial delivery for industrial environments, with emphasis on system-level design, navigation and practical deployment considerations.</p>
+    <div class="meta"><span class="tag">Autonomous Systems</span><span class="tag">Robotics</span><span class="tag">System Design</span></div>
+   </article>
+  </div>
+ </div>
 </section>
 
-<section id="projects">
-<h2>Featured Projects & Research</h2>
-
-<div class="card">
-<h3>AURA One – Autonomous Mobile Robot</h3>
-<p>Developing an autonomous mobile robot using ESP32,
-ROS 2 Jazzy, Gazebo simulation, sensors and robotics
-technologies.</p>
-</div>
-
-<div class="card">
-<h3>Multimodal Motor Health Monitoring</h3>
-<p>Research and development of motor fault detection
-using vibration and acoustic signal processing,
-feature extraction and machine learning.</p>
-</div>
-
-<div class="card">
-<h3>Urban Heat Analysis – Hyderabad</h3>
-<p>Geospatial research using Landsat satellite data,
-land surface temperature, spectral indices and
-machine learning for urban heat analysis.</p>
-</div>
+<section class="section" id="research">
+ <div class="wrap">
+  <div class="section-head"><div><div class="kicker">Research & publications</div><h2>Research beyond the classroom.</h2></div><p class="section-sub">A published book chapter and a conference research presentation focused on geospatial engineering and thermal management.</p></div>
+  <div class="publication reveal">
+   <div class="pub-card">
+    <div class="pub-type">Published book chapter · June 2026</div>
+    <h3>Nature-Inspired Thermal Management Based on LST and Spectral Indices Correlations: A GIS-Driven Engineering Approach</h3>
+    <p>Published chapter in the edited book <em>Environment, Climate, and Human Dynamics</em>, Volume 6S1, Book 1. The work explores land surface temperature (LST) and spectral-index correlations through a GIS-driven engineering approach.</p>
+    <div class="pub-meta">
+     <div><small>Publication</small><strong>June 2026</strong></div>
+     <div><small>Publisher</small><strong>IIP Series</strong></div>
+     <div><small>ISBN</small><strong>978-81-69861-43-4</strong></div>
+     <div><small>ISSN</small><strong>3070-7617</strong></div>
+    </div>
+    <a class="btn btn-primary" style="background:var(--navy);color:white" href="https://doi.org/10.58532/nbennurFGPGP2C2" target="_blank" rel="noopener">View DOI ↗</a>
+   </div>
+   <img class="cert-img zoomable" src="assets/publication-certificate.png" alt="Certificate of publication for the Nature-Inspired Thermal Management book chapter" loading="lazy">
+  </div>
+  <div class="panel conference reveal">
+   <img class="cert-img zoomable" src="assets/conference-certificate.png" alt="GEO SDI 2026 research presentation certificate" loading="lazy">
+   <div>
+    <div class="pub-type">Research presentation · 11–13 March 2026</div>
+    <h3>GEO SDI 2026 — Geoinformatics for Sustainable Development and Innovation</h3>
+    <p>Presented the research paper “Nature-Inspired Thermal Management Based on LST and Spectral Indices: A GIS-Driven Engineering Approach” at the UGC-sponsored International Conference on Geoinformatics for Sustainable Development and Innovation (Hybrid Mode), organised by the Centre for Geoinformatics, The Gandhigram Rural Institute (Deemed to be University), Tamil Nadu.</p>
+   </div>
+  </div>
+ </div>
 </section>
 
-<section id="skills">
-<h2>Technical Skills</h2>
-<div class="card skills">
-<span>Python</span><span>C/C++</span>
-<span>Embedded Systems</span><span>ESP32</span>
-<span>Arduino</span><span>ROS 2</span>
-<span>Machine Learning</span><span>Signal Processing</span>
-<span>MATLAB</span><span>GIS</span>
-</div>
+<section class="section white" id="skills">
+ <div class="wrap">
+  <div class="section-head"><div><div class="kicker">Technical toolkit</div><h2>Skills & technologies.</h2></div><p class="section-sub">Tools and technical areas used across academic work, prototypes, simulation and research.</p></div>
+  <div class="skill-grid">
+   <div class="skill reveal"><h3>Programming</h3><p>Python · C · C++ · JavaScript · SQL</p></div>
+   <div class="skill reveal"><h3>Embedded & IoT</h3><p>ESP32 · Arduino · Sensors · Actuators · IoT prototyping</p></div>
+   <div class="skill reveal"><h3>Robotics</h3><p>ROS 2 Jazzy · Gazebo · TurtleBot3 · Robot control · SLAM concepts</p></div>
+   <div class="skill reveal"><h3>AI & Machine Learning</h3><p>Machine learning · Feature engineering · Model evaluation · Explainable AI concepts</p></div>
+   <div class="skill reveal"><h3>Signal Processing</h3><p>Digital signal processing · Filtering · FFT · Vibration & acoustic analysis</p></div>
+   <div class="skill reveal"><h3>Geospatial & Remote Sensing</h3><p>GIS · Landsat · Spectral indices · Land surface temperature · ERA5</p></div>
+   <div class="skill reveal"><h3>Development Tools</h3><p>Git · GitHub · VS Code · Flutter · Node.js · MATLAB</p></div>
+   <div class="skill reveal"><h3>Research Practice</h3><p>Technical writing · Data analysis · Experimentation · Research presentation</p></div>
+  </div>
+ </div>
 </section>
 
-<section id="contact">
-<h2>Connect With Me</h2>
-<div class="card">
-<p>Let's connect and collaborate on engineering,
-research and innovative technology.</p>
-<a class="btn" href="https://github.com/dwaragaprasathp-creator">GitHub</a>
-<a class="btn" href="https://www.linkedin.com/in/dwaraga-prasath-p-ab3055382/">LinkedIn</a>
-</div>
+<section class="section" id="journey">
+ <div class="wrap">
+  <div class="section-head"><div><div class="kicker">Milestones</div><h2>Learning, building & sharing.</h2></div><p class="section-sub">Selected academic and technical milestones documented in the portfolio.</p></div>
+  <div class="about-grid">
+   <div class="panel reveal">
+    <div class="timeline">
+     <div class="timeline-item"><small>June 2026 · Publication</small><h3>Published a research book chapter</h3><p>Contributed “Nature-Inspired Thermal Management…” to the IIP Series edited book.</p></div>
+     <div class="timeline-item"><small>March 2026 · Conference</small><h3>Presented research at GEO SDI 2026</h3><p>Presented the GIS-driven thermal-management research at The Gandhigram Rural Institute.</p></div>
+     <div class="timeline-item"><small>2025–Present · Undergraduate study</small><h3>B.Tech in Electronics & Communication Engineering</h3><p>Amrita Vishwa Vidyapeetham, Nagercoil.</p></div>
+    </div>
+   </div>
+   <div class="panel reveal">
+    <div class="kicker">Competitions & learning</div>
+    <h3 style="color:var(--navy);margin:8px 0 15px">Hackathons & technical activities</h3>
+    <ul style="color:var(--muted);font-size:13px;padding-left:19px;margin:0">
+     <li>ISRO Bharatiya Antariksh Hackathon</li>
+     <li>ICRM Robotics and Mechatronics Competition</li>
+     <li>VIT Mauritius Tech-Ideathon</li>
+     <li>Sri Eshwar Hackathon</li>
+    </ul>
+    <div style="height:1px;background:var(--line);margin:20px 0"></div>
+    <div class="kicker">Languages</div>
+    <p style="font-size:13px;color:var(--muted);margin:8px 0 0">Tamil · Native<br>English · Fluent</p>
+   </div>
+  </div>
+ </div>
 </section>
-</main>
 
-<footer>© 2026 Dwaraga Prasath | Personal Portfolio</footer>
+<section class="section white" id="contact">
+ <div class="wrap">
+  <div class="contact reveal">
+   <div><div class="kicker" style="color:#d7c29b">Get in touch</div><h2>Let's connect and build something meaningful.</h2><p>Open to research conversations, engineering collaboration and learning opportunities.</p></div>
+   <div class="contact-links">
+    <a href="mailto:dwaragaprasath@gmail.com">Email ↗</a>
+    <a href="https://www.linkedin.com/in/dwaraga-prasath-p-ab3055382/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    <a href="https://github.com/dwaragaprasathp-creator" target="_blank" rel="noopener">GitHub ↗</a>
+   </div>
+  </div>
+ </div>
+</section>
+<footer>© 2026 Dwaraga Prasath P. · Designed as a personal engineering and research portfolio.</footer>
+
+<div class="modal" id="imageModal" role="dialog" aria-modal="true" aria-label="Certificate preview">
+ <button id="closeModal" aria-label="Close preview">×</button><img id="modalImage" alt="Certificate enlarged preview">
+</div>
+<script>
+const menuBtn=document.getElementById('menuBtn');
+const navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+const revealObserver=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');revealObserver.unobserve(entry.target)}}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObserver.observe(el));
+const modal=document.getElementById('imageModal'),modalImage=document.getElementById('modalImage');
+document.querySelectorAll('.zoomable').forEach(img=>img.addEventListener('click',()=>{modalImage.src=img.src;modal.classList.add('open')}));
+function closeModal(){modal.classList.remove('open');modalImage.src=''}
+document.getElementById('closeModal').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+</script>
 </body>
 </html>
